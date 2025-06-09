@@ -9,7 +9,7 @@ class Order
     private array $customer;
     private array $products;
     private \DateTime $deliveryDate;
-    private float $basePrice;
+    private float $basePrice = 0;
     private float $discountPrice;
     
     public function __construct($data)

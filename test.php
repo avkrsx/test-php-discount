@@ -25,16 +25,17 @@ $options = [
             "Content-Type: application/json\r\n" .
             "Accept: application/json\r\n",
         'content' => json_encode($data),
-        'timeout' => 5
+        'timeout' => 5,
+        'ignore_errors' => true
     ]
 ];
 $context = stream_context_create($options);
 $response = file_get_contents($url, false, $context);
 
-// print_r($response);
-
 // response
 if ($response) {
     $result = json_decode($response, true);
     print_r($result);
+} else {
+    die("Ошибка при отправке запроса");
 }

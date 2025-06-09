@@ -14,5 +14,6 @@ class Response
     {
         http_response_code($code);
         echo json_encode(['error' => $message]);
+        die;
     }
 }
